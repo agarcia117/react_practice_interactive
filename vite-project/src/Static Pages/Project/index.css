@@ -3,6 +3,11 @@ body {
   background: #27292c;
   color: white;
   margin: 0;
+
+  background-image: url("../Fragments/React-icon-half.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 9rem;
 }
 
 .header {
@@ -37,3 +42,12 @@ body {
 ul li{
   margin: 18px 0;
 }
+
+ul li::marker{
+  color: #61DAFB;
+  font-size: 1.5rem;
+}
+
+/* body{
+  
+} */
