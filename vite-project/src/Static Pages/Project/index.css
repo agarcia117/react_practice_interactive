@@ -1,5 +1,5 @@
 body {
-  font-family: Inter;
+  font-family: Inter, sans-serif;
   background: #27292c;
   color: white;
   margin: 0;
@@ -25,4 +25,15 @@ body {
   flex-direction: row;
   align-items: center;
   margin-left: 20px;
+}
+
+.main-title{
+  margin-left: 20px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  font-size: 2.4rem;
+}
+
+ul li{
+  margin: 18px 0;
 }
