@@ -4,3 +4,25 @@ body {
   color: white;
   margin: 0;
 }
+
+.header {
+  background-color: #21222A;
+}
+
+.header h1 {
+  color: #61DAFB;
+  font-size: 1.4rem;
+  font-weight:700;
+  margin-left: 8px;
+}
+
+.header-icon{
+  width: 30px;
+}
+
+.header-nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20px;
+}
