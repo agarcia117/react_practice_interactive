@@ -10,7 +10,6 @@
 
 .header-title{
   margin-left: 8px;
-  font-family: inter, sans-serif;
   font-weight: 500;
 }
 
@@ -20,4 +19,78 @@
 
 body{
   margin: 0;
+  font-family: inter, sans-serif;
+}
+
+.entry{
+  display: flex;
+  margin: 30px 30px;
+  align-items: center;
+}
+
+.location-image{
+  width: 125px;
+  height: 168px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.location-info-container{
+  margin-left: 15px;
+  align-items: center;
+}
+
+.location-header{
+  display: flex;
+  align-items: center;
+}
+
+.location-header span{
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.location-name{
+  margin: 6px 0px;
+  font-size: 25px;
+  font-weight: 700;
+  color: #2B283A;
+}
+
+.date{
+  font-weight: 700;
+  font-size: 10px;
+  margin: 12px 0;
+}
+
+.location-description{
+  font-size: 10px;
+  font-weight: 400;
+  color: #2B283A;
+  line-height: 15px;
+}
+
+.country-name{
+  color: #2B283A;
+  margin-left: 4px;
+  font-weight: 400;
+  letter-spacing: 0.17px;
+}
+
+.google-maps-text{
+  color: #918E9B;
+  margin-left: 10px;
+}
+
+a{
+  color: inherit;
+}
+
+.marker-icon{
+  width: 8px;
+}
+
+.location-info-main{
+  display: flex;
+  flex-direction: column;
 }
