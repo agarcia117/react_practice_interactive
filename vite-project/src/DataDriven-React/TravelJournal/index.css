@@ -1,0 +1,23 @@
+.header-banner{
+  background-color: #F55A5A;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+
+  display: flex;
+}
+
+.header-title{
+  margin-left: 8px;
+  font-family: inter, sans-serif;
+  font-weight: 500;
+}
+
+.globe-icon{
+  width: 24px;
+}
+
+body{
+  margin: 0;
+}

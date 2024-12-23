@@ -1,4 +1,4 @@
-import Page from './Static Pages/Project/index.jsx'
+import Page from './DataDriven-React/TravelJournal/index.jsx'
 
 function App() {
   return (
