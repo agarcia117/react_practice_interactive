@@ -1,4 +1,4 @@
-import Page from './DataDriven-React/TravelJournal/index.jsx'
+import Page from './DataDriven-React/Props/index.jsx'
 
 function App() {
   return (
