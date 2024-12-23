@@ -2,28 +2,28 @@
 import phoneIcon from "../images/phone-icon.png"
 import mailIcon from "../images/mail-icon.png"
 
-function Contact(props){
+function Contact({img, name, phoneNumber, email}){
   return(
     <>
       <article className="contact-card">
         <img 
-            src={props.img}
-            alt={`Photo of ${props.name}`}
+            src={img}
+            alt={`Photo of ${name}`}
         />
-        <h3>{props.name}</h3>
+        <h3>{name}</h3>
         <div className="info-group">
             <img 
                 src={phoneIcon}
                 alt="phone icon" 
             />
-            <p>{props.phoneNumber}</p>
+            <p>{phoneNumber}</p>
         </div>
         <div className="info-group">
             <img 
                 src={mailIcon}
                 alt="mail icon"
             />
-            <p>{props.email}</p>
+            <p>{email}</p>
         </div>
       </article>
     </>
