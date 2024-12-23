@@ -1,26 +1,35 @@
-import ReactDOM from 'react-dom/client';
+import Contact from "./components/Contact.jsx"
 
 function App() {
-  const hours = new Date().getHours()
-  let timeOfDay
-
-  if (hours < 12) {
-    timeOfDay = "morning"
-  } else if (hours >= 12 && hours < 17) {
-    timeOfDay = "afternoon"
-  } else if (hours < 21) {
-    timeOfDay = "evening"
-  } else {
-    timeOfDay = "night"
-  }
-  
-  /**
-   * Challenge: change the hard-coded "night" to display the
-   * text we determined from the logic above.
-   */
-
-  return (
-    <h1>Good {timeOfDay}</h1>
+  return(
+    <>
+      <div className="contacts">
+        <Contact 
+          img=".\src\DataDriven-React\Props\images\mr-whiskerson.png"
+          name="Mr.Whickerson"
+          phoneNumber="(212) 555-1234"
+          email="mr.whiskaz@catnap.meow"  
+        />
+        <Contact
+          img=".\src\DataDriven-React\Props\images\fluffykins.png"
+          name="Fluffykins"
+          phoneNumber="(212) 555-2345"
+          email="fluff@me.com"
+        />
+        <Contact 
+          img=".\src\DataDriven-React\Props\images\felix.png"
+          name="Felix"
+          phoneNumber="(212) 555-4567"
+          email="thecat@hotmail.com"
+        />
+        <Contact 
+          img=".\src\DataDriven-React\Props\images\pumpkin.png"
+          name="Pumpkin"
+          phoneNumber="(0800) CAT KING"
+          email="pumpkin@scrimba.com"
+        />
+      </div>
+    </>
   )
 }
 
