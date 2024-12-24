@@ -1,4 +1,3 @@
-// import whiskerson from ""
 import phoneIcon from "../images/phone-icon.png"
 import mailIcon from "../images/mail-icon.png"
 

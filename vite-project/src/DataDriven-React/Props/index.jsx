@@ -1,9 +1,22 @@
-import Contact from "./components/Contact.jsx"
+import Joke from "./components/Joke.jsx"
 
 function App() {
   return(
     <>
-      <div className="contacts">
+      <Joke setup="I got my daughter a fridge for her birthday." punchline="I can't wait to see her face light up when she opens it."/>
+      <Joke setup="How did the hacker escape the police?"  punchline="How did the hacker escape the police?"/>
+      <Joke setup="Why don't pirates travel on mountain roads?" punchline="Scurvy."/>
+      <Joke setup="Why do bees stay in the hive in the winter?" punchline="Swarm."/>
+      <Joke punchline="I don't know, but the flag is a big plus!"/>
+    </>
+  )
+}
+
+export default App
+
+// ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+{/* <div className="contacts">
         <Contact 
           img=".\src\DataDriven-React\Props\images\mr-whiskerson.png"
           name="Mr.Whickerson"
@@ -28,11 +41,4 @@ function App() {
           phoneNumber="(0800) CAT KING"
           email="pumpkin@scrimba.com"
         />
-      </div>
-    </>
-  )
-}
-
-export default App
-
-// ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+      </div> */}
