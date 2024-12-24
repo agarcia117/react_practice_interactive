@@ -1,6 +1,3 @@
-// import phoneIcon from "../images/phone-icon.png"
-// import mailIcon from "../images/mail-icon.png"
-
 function Joke({setup, punchline}){
   return(
     <>
