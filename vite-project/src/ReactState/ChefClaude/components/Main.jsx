@@ -12,7 +12,7 @@ function Main() {
         const formData = new FormData(event.currentTarget);
         const newIngredient = formData.get("ingredient");
         
-        setIngredients([...ingredients, newIngredient]);
+        setIngredients(prevIngredients => [...prevIngredients, newIngredient]);
     }
 
     return (
