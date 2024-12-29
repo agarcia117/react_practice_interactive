@@ -4,52 +4,32 @@ import starFilled from "./images/star-filled.png"
 import starEmpty from "./images/star-empty.png"
 
 function Page() {
-  const [contact, setContact] = React.useState({
-    firstName: "John",
-    lastName: "Doe",
-    phone: "+1 (212) 555-1212",
-    email: "itsmyrealname@example.com",
-    isFavorite: false
-  })
-
-  function toggleFavorite() {
-      setContact(prevContact => {
-        return {...prevContact, isFavorite : !prevContact.isFavorite}
-      })
-  }
   
+  function signUp(formData){
+    const email = formData.get("email");
+    const password = formData.get("password");
+    console.log(email);
+    console.log(password);
+    
+  }
   
   return (
       <>
-        <main>
-            <article className="card">
-                <img
-                    src={avatar}
-                    className="avatar"
-                    alt="User profile picture of John Doe"
-                />
-                <div className="info">
-                    <button
-                        onClick={toggleFavorite}
-                        aria-pressed={contact.isFavorite}
-                        aria-label={!contact.isFavorite ? "Add to favorites" : "Remove from favorites"}
-                        className="favorite-button"
-                    >
-                        <img
-                            src={contact.isFavorite ? starFilled : starEmpty}
-                            alt={contact.isFavorite ? "Filled Star Icon" : "Empty Star Icon"}
-                            className="favorite"
-                        />
-                    </button>
-                    <h2 className="name">
-                        {`${contact.firstName} ${contact.lastName}`}
-                    </h2>
-                    <p className="contact">{contact.phone}</p>
-                    <p className="contact">{contact.email}</p>
-                </div>
+        <section>
+          <h1>Signup form</h1>
+          <form action={signUp}>
+            <label htmlFor="email">Email:</label>
+            <input id="email" type="email" name="email" placeholder="joe@schmoe.com" />
+            <br />
+            
+            <label htmlFor="password">Password:</label>
+            <input id="password" type="password" name="password"/>
+            <br />
 
-            </article>
-        </main>
+            <button>Submit</button>
+            
+          </form>
+        </section>
       </>
   )
 }
@@ -110,3 +90,51 @@ export default Page
             {thingsElements}
           </section>
         </main> */}
+
+
+
+
+  
+
+// const [contact, setContact] = React.useState({
+//   firstName: "John",
+//   lastName: "Doe",
+//   phone: "+1 (212) 555-1212",
+//   email: "itsmyrealname@example.com",
+//   isFavorite: false
+// })
+
+// function toggleFavorite() {
+//     setContact(prevContact => {
+//       return {...prevContact, isFavorite : !prevContact.isFavorite}
+//     })
+// }
+{/* <main>
+  <article className="card">
+      <img
+          src={avatar}
+          className="avatar"
+          alt="User profile picture of John Doe"
+      />
+      <div className="info">
+          <button
+              onClick={toggleFavorite}
+              aria-pressed={contact.isFavorite}
+              aria-label={!contact.isFavorite ? "Add to favorites" : "Remove from favorites"}
+              className="favorite-button"
+          >
+              <img
+                  src={contact.isFavorite ? starFilled : starEmpty}
+                  alt={contact.isFavorite ? "Filled Star Icon" : "Empty Star Icon"}
+                  className="favorite"
+              />
+          </button>
+          <h2 className="name">
+              {`${contact.firstName} ${contact.lastName}`}
+          </h2>
+          <p className="contact">{contact.phone}</p>
+          <p className="contact">{contact.email}</p>
+      </div>
+
+  </article>
+</main> */}
