@@ -1,11 +1,12 @@
+import { useState } from "react";
 import Joke from "./components/Joke.jsx"
 import jokesData from "./jokesData.js"
 function App() {
-  // console.log(jokesData)
+
   const jokeElements = jokesData.map(joke => {
     return <Joke setup={joke.setup} punchline={joke.punchline} />;
   });
-
+  
   return(
     <>
       <main>
