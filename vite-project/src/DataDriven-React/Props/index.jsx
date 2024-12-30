@@ -3,15 +3,13 @@ import Joke from "./components/Joke.jsx"
 import jokesData from "./jokesData.js"
 function App() {
 
-  const jokeElements = jokesData.map(joke => {
-    return <Joke setup={joke.setup} punchline={joke.punchline} />;
-  });
-  
+  const [unreadMessages, setUnreadMessages] = useState(["bruh"]);
+  const message = unreadMessages.length === 1 ? "message" : "messages";
   return(
     <>
-      <main>
-        {jokeElements}
-      </main>
+      
+      {unreadMessages.length > 0 && <h1>You have {unreadMessages.length} unread {message}!</h1>}
+      {unreadMessages.length === 0 && <p>You're all caught up!</p>}
     </>
   )
 }
@@ -46,3 +44,17 @@ export default App
           email="pumpkin@scrimba.com"
         />
       </div> */}
+
+
+
+
+
+
+
+
+// const jokeElements = jokesData.map(joke => {
+//   return <Joke setup={joke.setup} punchline={joke.punchline} />;
+// });
+{/* <main>
+        {jokeElements}
+      </main> */}
