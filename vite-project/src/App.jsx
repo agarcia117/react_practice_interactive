@@ -1,6 +1,7 @@
-import Page from './ReactState/StatePractice/index.jsx'
+import Page from './ReactState/SoundPads/index.jsx'
 
-function App() {
+function App(props) {
+
   return (
     <>
       <Page/>

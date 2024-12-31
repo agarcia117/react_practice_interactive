@@ -1,22 +1,30 @@
-//import Count from "./component/Count.jsx"
-//import Star from "./component/Star.jsx"
 import { useState } from "react";
-//import avatar from "./images/user.png"
-import Header from "./component/Header.jsx"
-import Body from "./component/Body.jsx"
+import pads from "./pads";
+import Pad from "./components/Pad.jsx"
 
+function Page(props) {
+  const [padsArr, setPadsArr] = useState(pads);
 
+  const padsElement = padsArr.map(pad => {
+    return <Pad color={pad.color} id={pad.id} key={pad.id} on={pad.on} toggle={toggle}/>
+  });
 
-
-function Page() {
-  const [userName, setUserName] = useState("Alan");
+  function toggle(id){
+    setPadsArr(prevArr => {
+      return prevArr.map(pad => {
+        return pad.id === id ? {...pad, on: !pad.on} : pad;
+      });
+    });
+  }
+  
 
   return (
-      <>
-        <Header name={userName} />
-        <Body name={userName}/>
-      </>
-  )
+    <main>
+        <div className="pad-container">
+            {padsElement}
+        </div>
+    </main>
+)
 }
 
 export default Page
