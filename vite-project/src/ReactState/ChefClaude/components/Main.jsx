@@ -16,7 +16,7 @@ function Main() {
     function toggleRecipeShown(){
         setRecipeShown(prev => !prev);
     }
-
+    
     return (
         <main>
             <form action={addIngredient} className="add-ingredient-form">
