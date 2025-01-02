@@ -1,4 +1,4 @@
-import Page from './ReactState/SoundPads/index.jsx'
+import Page from './ReactState/ChefClaude/index.jsx'
 
 function App(props) {
 
