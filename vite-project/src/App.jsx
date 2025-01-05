@@ -1,4 +1,4 @@
-import Page from './ReactState/ChefClaude/index.jsx'
+import Page from './Effects/MemeGenerator/index.jsx'
 
 function App(props) {
   
