@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Main() {
 
@@ -12,9 +12,19 @@ export default function Main() {
     const {value, name} = event.currentTarget;
 
     setMemeData(prevData => {
-      return {...prevData, [name]: value}
+      return {...prevData, [name]: value};
     });
   }
+
+  const [starWarsData, setStarWarsData] = useState(null);
+  const [count, setCount] = useState(1);
+    
+  useEffect(() => {
+    fetch(`https://swapi.dev/api/people/${count}`)
+      .then(res => res.json())
+      .then(data => setStarWarsData(data))
+  }, [count])
+  
   
   return (
       <main>
@@ -45,6 +55,11 @@ export default function Main() {
               <span className="top">{memeData.topText}</span>
               <span className="bottom">{memeData.bottomText}</span>
           </div>
+
+          <div>
+            <pre>{JSON.stringify(starWarsData)}</pre>
+          </div>
+          <button onClick={() => setCount(prev => prev + 1)}>Get next Character</button>
       </main>
   )
 }
