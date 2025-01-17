@@ -1,10 +1,10 @@
 import Page from './Effects/MemeGenerator/index.jsx'
 
-function App(props) {
+function App() {
   
   return (
     <>
-      <Page/>
+      <Page />
     </>
   )
 }

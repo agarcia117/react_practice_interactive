@@ -16,15 +16,24 @@ export default function Main() {
     });
   }
 
-  const [starWarsData, setStarWarsData] = useState(null);
-  const [count, setCount] = useState(1);
-    
+  function getNewMeme(){
+    //console.log(memeArray);
+    const randomMeme = memeArray[Math.floor(Math.random() * memeArray.length)];
+    const newMemeUrl = randomMeme.url;
+    setMemeData(prevData => {
+      return {...prevData, imageUrl: newMemeUrl};
+    });
+  }
+
+  const [memeArray, setMemeArray] = useState([]);
+
   useEffect(() => {
-    fetch(`https://swapi.dev/api/people/${count}`)
+    fetch('https://api.imgflip.com/get_memes')
       .then(res => res.json())
-      .then(data => setStarWarsData(data))
-  }, [count])
+      .then(data => setMemeArray(data.data.memes))
+  }, []);
   
+  //console.log(memeArray);
   
   return (
       <main>
@@ -48,7 +57,7 @@ export default function Main() {
                       value={memeData.bottomText}
                   />
               </label>
-              <button>Get a new meme image 🖼</button>
+              <button onClick={getNewMeme}>Get a new meme image 🖼</button>
           </div>
           <div className="meme">
               <img src={memeData.imageUrl} />
@@ -56,10 +65,10 @@ export default function Main() {
               <span className="bottom">{memeData.bottomText}</span>
           </div>
 
-          <div>
+          {/* <div>
             <pre>{JSON.stringify(starWarsData)}</pre>
           </div>
-          <button onClick={() => setCount(prev => prev + 1)}>Get next Character</button>
+          <button onClick={() => setCount(prev => prev + 1)}>Get next Character</button> */}
       </main>
   )
 }
