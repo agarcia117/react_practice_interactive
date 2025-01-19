@@ -9,9 +9,10 @@ function Page() {
               <h1>Assembly: Endgame</h1>
               <p>Guess the word in under 8 attempts to keep the programming world safe from assembly!</p>
             </header>
-            <div className="status-container">
-
-            </div>
+            <section className="status-container">
+              <h1>You Win!</h1>
+              <p>Well done! &#127881;</p>
+            </section>
           
         </main>
       </>
