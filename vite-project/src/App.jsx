@@ -1,4 +1,4 @@
-import Page from './projects/Tenzies/index.jsx'
+import Page from './projects/AssemblyEndgame/index.jsx'
 
 function App() {
   
