@@ -17,7 +17,6 @@ export default function Main() {
   }
 
   function getNewMeme(){
-    //console.log(memeArray);
     const randomMeme = memeArray[Math.floor(Math.random() * memeArray.length)];
     const newMemeUrl = randomMeme.url;
     setMemeData(prevData => {
@@ -32,9 +31,7 @@ export default function Main() {
       .then(res => res.json())
       .then(data => setMemeArray(data.data.memes))
   }, []);
-  
-  //console.log(memeArray);
-  
+    
   return (
       <main>
           <div className="form">

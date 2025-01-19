@@ -1,4 +1,4 @@
-import Page from './Effects/MemeGenerator/index.jsx'
+import Page from './projects/Tenzies/index.jsx'
 
 function App() {
   

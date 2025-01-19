@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ClaudeRecipe from "./ClaudeRecipe";
 import IngredientsList from "./IngredientsList";
-import { getRecipeFromChefClaude, getRecipeFromMistral } from "../ai.js"
+import {getRecipeFromMistral } from "../ai.js"
 
 function Main() {
 
     const [ingredients, setIngredients] = useState(['pasta', 'heavy cream', 'all the main spices', 'chicken', 'corn']);
     const [recipeShown, setRecipeShown] = useState(false);
     const [recipe, setRecipe] = useState('');
+    const recipeSection = useRef(null);
+
+    useEffect(() => {
+        if(recipe !== "" && recipeSection.current !== null){
+            recipeSection.current.scrollIntoView({behavior: "smooth"});
+        }
+    }, [recipe]);
     
     async function addIngredient(formData){
         const newIngredient = formData.get("ingredient");
@@ -16,12 +23,11 @@ function Main() {
 
     async function getRecipe(){
         const recipeMarkdown = await getRecipeFromMistral(ingredients);
-        console.log(recipeMarkdown);
         
         setRecipe(recipeMarkdown);
         setRecipeShown(prev => !prev);
     }
-    
+
     return (
         <main>
             <form action={addIngredient} className="add-ingredient-form">
@@ -33,7 +39,8 @@ function Main() {
                 />
                 <button>Add ingredient</button>
             </form>
-            {ingredients.length > 0 ? <IngredientsList 
+            {ingredients.length > 0 ? <IngredientsList
+                                        ref={recipeSection} 
                                         ingredients={ingredients} 
                                         getRecipe={getRecipe}/> : null}
 

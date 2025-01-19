@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './Effects/MemeGenerator/index.css'
+import './projects/Tenzies/index.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
