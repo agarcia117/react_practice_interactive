@@ -42,12 +42,28 @@ header p {
 }
 
 .status-container{
-  width: 352px;
-  background-color: #10A95B;
+  width: 100%;
+  max-width: 350px;
   border-radius: 4px;
   padding: 6px 0;
   text-align: center;
   margin: 0 0;
+  min-height: 60px;
+}
+
+.status-container.wrong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7A5EA7;
+}
+
+.status-container.won {
+  background-color: #10A95B;
+}
+
+.status-container.lost {
+  background-color: #BA2A2A;
 }
 
 .status-container h1{
@@ -74,6 +90,7 @@ header p {
 .languages-container span{
   padding: 4.5px;
   border-radius: 3px;
+  position: relative;
 }
 
 .letters-container {
@@ -116,6 +133,11 @@ header p {
   cursor: pointer;
 }
 
+.keyboard-container button:disabled {
+  cursor: not-allowed;
+  opacity: .5;
+}
+
 button.new-game {
   background-color: #11B5E5;
   border: 1px solid #D7D7D7;
@@ -134,5 +156,20 @@ button.new-game {
 
 .keyboard-container button.wrong {
   background-color: #EC5D49;
+}
+
+span.lost::before {
+  content: "💀";
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 0.85rem;
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
