@@ -1,11 +1,13 @@
 import { useState } from "react"
 import { languages } from "./languages"
 import { clsx } from "clsx";
-import {getFarewellText} from "./utils"
+import {getFarewellText, getRandomWord} from "./utils"
+import Confetti from "react-confetti"
+
 
 function Page() {
-
-  const [currentWord, setCurrentWord] = useState('react'.toLowerCase());
+  // const randomWord = words[Math.floor(Math.random() * words.length)];
+  const [currentWord, setCurrentWord] = useState(() => getRandomWord());
   const [guesses, setGuesses] = useState([]);
   
   const wrongGuessCount =  guesses.reduce((accumulator, letter) => {
@@ -16,7 +18,7 @@ function Page() {
   }, 0);
   
   const isGameLost = wrongGuessCount >= languages.length - 1;
-  const isGameWon = (guesses.length - wrongGuessCount) >= currentWord.length;
+  const isGameWon = currentWord.split("").every(letter => guesses.includes(letter));
   const isGameOver = isGameWon || isGameLost;
   const isLastGuessIncorrect = guesses.length > 0 && !currentWord.includes(guesses[guesses.length - 1]);
   const statusClassName = clsx("status-container", isLastGuessIncorrect && !isGameOver && "wrong" , isGameWon && "won", isGameLost && "lost")
@@ -39,7 +41,8 @@ function Page() {
   });
 
   const letterElements = currentWord.split('').map((letter, index) => {
-    return <span key={index}>{guesses.includes(letter) ? letter.toUpperCase() : ''}</span>
+    const letterClassName = clsx(!guesses.includes(letter) && isGameOver && "missed-letter")
+    return <span key={index} className={letterClassName}>{guesses.includes(letter) || isGameOver ? letter.toUpperCase() : ''}</span>
   });
 
   const keyboardElements = alphabet.split('').map(letter => {
@@ -91,12 +94,14 @@ function Page() {
   }
 
   function resetGame(){
+    setCurrentWord(getRandomWord());
     setGuesses([]);
   }
   
   return (
       <>
         <main>
+          {isGameWon && <Confetti recycle={false} numberOfPieces={1000}/>}
           <header>
             <h1>Assembly: Endgame</h1>
             <p>Guess the word in under 8 attempts to keep the programming world safe from assembly!</p>
