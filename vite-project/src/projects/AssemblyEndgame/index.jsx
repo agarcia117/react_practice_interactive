@@ -1,10 +1,10 @@
-import {useState } from "react"
+import { useState } from "react"
 import { languages } from "./languages"
 import { clsx } from "clsx";
 
 function Page() {
 
-  const [currentWord, setCurrentWord] = useState('react');
+  const [currentWord, setCurrentWord] = useState('react'.toLowerCase());
   const [guesses, setGuesses] = useState([]);
   console.log(guesses);
   
@@ -19,7 +19,7 @@ function Page() {
   });
 
   const letterElements = currentWord.split('').map((letter, index) => {
-    return <span key={index}>{letter.toUpperCase()}</span>
+    return <span key={index}>{guesses.includes(letter) ? letter.toUpperCase() : ''}</span>
   });
 
   const keyboardElements = alphabet.split('').map(letter => {
